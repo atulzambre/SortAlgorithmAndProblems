@@ -10,7 +10,9 @@ The selection sort algorithm sorts an array by repeatedly finding the minimum el
         2) Remaining subarray which is unsorted.
 
         In every iteration of selection sort, the minimum element (considering ascending order) from the unsorted subarray is picked and moved to the sorted subarray.
+Time Complexity: O(n2) as there are two nested loops.
 
+Auxiliary Space: O(1)
 */
 public class SelectionSortAlg {
     public static void main(String[] args) {
