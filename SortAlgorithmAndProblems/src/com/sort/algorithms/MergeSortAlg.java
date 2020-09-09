@@ -1,4 +1,7 @@
 package com.sort.algorithms;
+
+import java.util.Arrays;
+
 /*
 Like QuickSort, Merge Sort is a Divide and Conquer algorithm. It divides input array in two halves, calls itself for the two halves and then merges the two sorted halves. The merge() function is used for merging two halves. The merge(arr, l, m, r) is key process that assumes that arr[l..m] and arr[m+1..r] are sorted and merges the two sorted sub-arrays into one. See following C implementation for details.
 
@@ -16,8 +19,9 @@ Like QuickSort, Merge Sort is a Divide and Conquer algorithm. It divides input a
 */
 public class MergeSortAlg {
     public static void main(String[] args) {
-        int arr[]={2,1};
+        int arr[]={3,2,1};
         mergeSort(arr,0,arr.length-1);
+        System.out.println(Arrays.toString(arr));
     }
 
     private static void mergeSort(int[] arr, int l, int r) {
@@ -31,6 +35,40 @@ public class MergeSortAlg {
     }
 
     private static void merge(int[] arr, int l, int mid, int r) {
+            int n1=mid-l+1;
+            int n2=r-mid;
+
+            int l1[]=new int[n1];
+            int r1[]=new int[n2];
+        for (int i = 0; i < n1; ++i)
+            l1[i] = arr[l + i];
+        for (int j = 0; j < n2; ++j)
+            r1[j] = arr[mid + 1 + j];
+
+        int i=0,j=0;
+            int count=l;
+           while(i<n1&&j<n2){
+
+               if(l1[i]>=r1[j]){
+                   arr[count]=r1[j];
+                   j++;
+               }
+               else{
+                   arr[count]=l1[i];
+                   i++;
+               }
+               count++;
+           }
+           while(i<n1){
+               arr[count]=l1[i];
+               count++;
+               i++;
+           }
+           while(j<n2){
+               arr[count]=r1[j];
+               count++;
+               j++;
+           }
 
     }
 }
