@@ -19,7 +19,7 @@ Like QuickSort, Merge Sort is a Divide and Conquer algorithm. It divides input a
 */
 public class MergeSortAlg {
     public static void main(String[] args) {
-        int arr[]={3,2,1};
+        int arr[]={3,2,1,1,2,3,4,55,6,6,67,7,8,8,9,9,0,6,5,4,3,64,654,7,567,6,8,678,67,89,789,87,9,78,9879,78,9,879,89};
         mergeSort(arr,0,arr.length-1);
         System.out.println(Arrays.toString(arr));
     }
